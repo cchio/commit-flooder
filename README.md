@@ -24,7 +24,7 @@ and add these two lines to your `.bashrc` or `.zshrc` - basically any piece of c
 You'll want to make sure that you cloned the repository via SSH instead of HTTPS, then ensure that your Github SSH key is added loaded in your SSH-agent. (look [here](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/) if you don't know what I'm talking about) This way, you can automagically push commits in the background each time you start a shell without being bothered by a username/password prompt.
 
 ## Result
-You will push a commit to this Github each time you open a new shell session.
+You will push a commit to your own forked version of this repository each time you open a new shell session.
 
 ## Dependencies
 The `commit-flooder.sh` script calls `openssl rand -base64 32` to generate a random string. If your system doesn't have an OpenSSL installation and don't want to install it, you can use any other method you wish to generate random strings.
