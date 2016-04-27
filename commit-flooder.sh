@@ -1,7 +1,8 @@
 #!/bin/bash
-head -n 2 README.md > tmp.txt && mv tmp.txt README.md
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+rm $DIR/hash.txt
 RAND="$(openssl rand -base64 32)"
-printf "$RAND" >> README.md
-git add README.md
-git commit -m "$RAND commit"
-git push
+printf "$RAND" >> $DIR/hash.txt
+git --git-dir=$DIR/.git --work-tree=$DIR add $DIR/hash.txt
+git --git-dir=$DIR/.git --work-tree=$DIR commit -m "$RAND commit"
+git --git-dir=$DIR/.git --work-tree=$DIR push
